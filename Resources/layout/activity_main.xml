@@ -1,0 +1,55 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:src="@drawable/homeimage4"
+        android:scaleType = "centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ImageViewMain" />
+
+    <TextView
+        android:text="While we are postponing, life speeds by !"
+        android:textColor = "#FFFFFF"
+        android:layout_marginTop = "100dp"
+        android:layout_alignParentRight = "true"
+        android:padding = "20dp"
+        android:textStyle = "italic"
+        android:textSize = "23dp"
+        android:layout_width="244.5dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/TextViewCenterMain" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft = "20dp"
+        android:paddingRight = "20dp"
+        android:paddingBottom = "15dp"
+        android:layout_alignParentBottom = "true"
+        android:orientation = "vertical">
+
+        <Button
+            android:text="Войти"
+            android:textColor = "#2F4F4F"
+            android:background = "@drawable/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ButtonEntranceMain"/>
+
+        <Button
+            android:text="Создать профиль"
+            android:textColor = "#2F4F4F"
+            android:background = "@drawable/ButtonStyle"
+            android:layout_marginTop = "10dp"            
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ButtonRegistrationMain"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

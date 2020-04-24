@@ -1,0 +1,117 @@
+﻿<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation = "vertical"
+    android:paddingTop = "10dp"
+    android:paddingLeft = "10dp"
+    android:paddingRight = "10dp"
+    android:paddingBottom = "10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation = "vertical">
+
+            <TextView
+                android:text="Вход"
+                android:textColor = "#2F4F4F"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:gravity = "center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextViewEntranceHead" />
+
+            <TextView
+                android:text="Введите свой логин и пароль"
+                android:layout_marginTop = "5dp"
+                android:gravity = "center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextViewExplanation" />
+
+             <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop = "10dp"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:id="@+id/TextLayoutEntranceLogin">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/EditEntranceLogin"
+                        android:padding = "7dp"
+                        android:hint="Логин"/>
+             </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop = "10dp"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:id="@+id/TextLayoutEntrancePassword">
+                    <EditText
+                        android:inputType="textPassword"
+                        android:layout_width="match_parent"                       
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/EditEntrancePassword"
+                        android:padding = "7dp"
+                        android:hint="Пароль"/>
+             </android.support.design.widget.TextInputLayout>
+
+            <CheckBox
+                android:text="Запомнить меня"
+                android:textColor = "#2F4F4F"
+                android:layout_marginTop = "10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/CheckBoxEntranceRemember" />
+
+            <Button
+                android:text="Войти"
+                android:textColor = "#2F4F4F"
+                android:layout_marginTop = "10dp"
+                android:background = "@drawable/buttonstyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ButtonEntrance" />
+
+            <TextView
+                android:text="Нет своего профиля ?"
+                android:layout_marginTop = "10dp"
+                android:gravity = "center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextViewEntranceNotAccount" />
+
+            <Button
+				android:text="Зарегистрируйтесь"
+                android:gravity = "center"
+				android:textAppearance="?android:attr/textAppearanceSmall" 
+				android:layout_width = "match_parent"
+                android:layout_marginBottom="10dp" 
+				android:layout_height="50dp"
+                android:textColor = "#2F4F4F"
+				android:background="@android:color/transparent" 
+				android:layout_below="@+id/btn_auth"
+				android:id="@+id/ButtonEntranceRegistration" />
+             
+        </LinearLayout>
+    </ScrollView>
+    <ProgressBar
+		    android:layout_gravity = "center"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+	        android:visibility="gone"
+		    android:id="@+id/loader"
+	 />
+</LinearLayout>

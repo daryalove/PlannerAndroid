@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My dayreams</string>
+    <string name="title_current_plan">Неделя</string>
+    <string name="title_statistics">Статистика</string>
+    <string name="title_plan_creation">Календарь</string>
+    <string name="title_exit">Выйти</string>
+</resources>

@@ -1,0 +1,64 @@
+﻿<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+     <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation = "vertical">
+
+        <TextView
+            android:text="Задача"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TextCreateTaskName" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EditCreateTaskName" />
+        <TextView
+            android:text="Время"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TextCreateTaskTime" />    
+        <EditText
+            android:inputType="time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EditCreateTaskTime" />
+        <TextView
+            android:text="Заметки"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TextCreateTaskNote" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EditCreateTaskNote" />
+        <RatingBar
+            android:stepSize="1.0"
+            android:id = "@+id/RatingCreateTaskImportance"
+            android:numStars="5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:text="Напоминание"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CheckBoxCreateTaskReminder" />
+        <TimePicker
+            android:layout_width="match_parent"
+            android:timePickerMode = "spinner"
+            android:layout_height="wrap_content"
+            android:id="@+id/TimePickerCreateTask" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

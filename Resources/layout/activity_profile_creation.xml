@@ -1,0 +1,132 @@
+﻿<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation = "vertical"
+    android:paddingTop = "10dp"
+    android:paddingLeft = "10dp"
+    android:paddingRight = "10dp"
+    android:paddingBottom = "10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+     <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation = "vertical">
+            <TextView
+                android:text="Создание профиля"
+                android:textColor = "#2F4F4F"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:gravity = "center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextViewProfileCreationHead" />
+
+             <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop = "20dp"
+                    android:layout_height="wrap_content"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:id="@+id/TextLayoutProfileCreationLastName">
+                    <EditText
+                        android:inputType = "text"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/EditProfileCreationLastName"
+                        android:padding = "7dp"
+                        android:hint="Фамилия"/>
+             </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:id="@+id/TextLayoutProfileCreationName">
+                    <EditText
+                        android:inputType = "text"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/EditProfileCreationName"
+                        android:padding = "7dp"
+                        android:hint="Имя"/>
+             </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:id="@+id/TextLayoutProfileCreationDateOfBirth">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/EditProfileCreationDateOfBirth"
+                        android:padding = "7dp"
+                        android:hint="Дата рождения"/>
+             </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:id="@+id/TextLayoutProfileCreationLogin">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/EditProfileCreationLogin"
+                        android:padding = "7dp"
+                        android:hint="Логин"/>
+             </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:id="@+id/TextLayoutProfileCreationPassword">
+                    <EditText
+                        android:inputType = "textPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/EditProfileCreationPassword"
+                        android:padding = "7dp"
+                        android:hint="Пароль"/>
+             </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:id="@+id/TextLayoutProfileCreationPasswordRepeat">
+                    <EditText
+                        android:inputType = "textPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/EditProfileCreationPasswordRepeat"
+                        android:padding = "7dp"
+                        android:hint="Повтор пароля"/>
+             </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:text="Зарегистрироваться"
+                android:textColor = "#2F4F4F"
+                android:background = "@drawable/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ButtonProfileCreation" />            
+        </LinearLayout>
+    </ScrollView>
+    <ProgressBar
+		android:layout_gravity = "center"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+	    android:visibility="gone"
+		android:id="@+id/loader"
+	 />
+</LinearLayout>
