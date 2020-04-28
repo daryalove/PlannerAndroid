@@ -16,7 +16,7 @@ namespace App1.Activity.Statistic
 {
     class ActivityStatistics : Android.App.Fragment
     {
-        private int progressStatus = 0, progressStatus1 = 100;
+        
         private static TextView TextProgress;
         private static ProgressBar circularbar;
         private static RatingBar ratingBar;
@@ -32,7 +32,7 @@ namespace App1.Activity.Statistic
             circularbar = view.FindViewById<ProgressBar>(Resource.Id.circularProgressbar);
             ratingBar = view.FindViewById<RatingBar>(Resource.Id.RatingBarStatistics);
             TextProgress = view.FindViewById<TextView>(Resource.Id.TextViewProgressStatistics);
-            ratingBar.Click += RTBStart_Click;
+            ratingBar.RatingBarChange += RTBStart_Click;
             circularbar.Max = 100;
             circularbar.Progress = 0;
             circularbar.SecondaryProgress = 0;
@@ -42,18 +42,19 @@ namespace App1.Activity.Statistic
         private void RTBStart_Click(object sender, System.EventArgs e)
         {
             int r = Convert.ToInt32(ratingBar.Rating);
-            new System.Threading.Thread(new ThreadStart(delegate
+            TextProgress.Text = (100 / r).ToString();
+            int progressStatus = 0, progressStatus1 = 100;           
+            new System.Threading.Thread(new ThreadStart( delegate
             {
                 while (progressStatus < (100/r))
                 {
                     progressStatus += 1;
                     progressStatus1 -= 1;
-                    circularbar.Progress = progressStatus;
-                    TextProgress.Text = circularbar.Progress.ToString();
+                    circularbar.Progress = progressStatus;                    
                     System.Threading.Thread.Sleep(20);
                 }
-                TextProgress.Text += " %";
             })).Start();
         }
+
     }
 }

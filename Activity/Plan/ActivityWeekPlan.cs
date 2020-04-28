@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using App1.Activity.ListOfTasks;
+using Plugin.Settings;
 
 namespace App1.Activity.Plan
 {
@@ -36,22 +38,58 @@ namespace App1.Activity.Plan
             DateTime thisDay = DateTime.Today;
 
             int daysInFeb = System.DateTime.DaysInMonth(thisDay.Year, thisDay.Month);
-            cardViewMonday.Click += CardViewClick;
-            cardViewTuesday.Click += CardViewClick;
-            cardViewWednesday.Click += CardViewClick;
-            cardViewThursday.Click += CardViewClick;
-            cardViewFriday.Click += CardViewClick;
-            cardViewSaturday.Click += CardViewClick;
-            cardViewSunday.Click += CardViewClick;
 
+            cardViewMonday.Click += delegate
+            {
+                CrossSettings.Current.AddOrUpdateValue("WhichCard", "Monday");
+                CardViewClick();
+            };
+            cardViewTuesday.Click += delegate
+            {
+                CrossSettings.Current.AddOrUpdateValue("WhichCard", "Tuesday");
+                CardViewClick();
+            };
+            cardViewWednesday.Click += delegate
+            {
+                CrossSettings.Current.AddOrUpdateValue("WhichCard", "Wednesday");
+                CardViewClick();
+            };
+            cardViewThursday.Click += delegate
+            {
+                CrossSettings.Current.AddOrUpdateValue("WhichCard", "Thursday");
+                CardViewClick();
+            };
+            cardViewFriday.Click += delegate
+            {
+                CrossSettings.Current.AddOrUpdateValue("WhichCard", "Friday");
+                CardViewClick();
+            };
+            cardViewSaturday.Click += delegate
+            {
+                CrossSettings.Current.AddOrUpdateValue("WhichCard", "Saturday");
+                CardViewClick();
+            };
+            cardViewSunday.Click += delegate
+            {
+                CrossSettings.Current.AddOrUpdateValue("WhichCard", "Sunday");
+                CardViewClick();
+            };
             #endregion
 
             return view;
         }
 
-        private void CardViewClick(object sender, System.EventArgs e)
+        private void CardViewClick()
         {
-
+            try
+            {
+                Intent ListTasks = new Intent(Activity, typeof(ActivityListTasks));
+                StartActivity(ListTasks);
+            }
+            catch(InvalidCastException ex)
+            {
+                Toast.MakeText(Activity, ex.Message, ToastLength.Long).Show();
+            }
         }
     }
 }

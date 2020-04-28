@@ -13,10 +13,5 @@
   <item
       android:id="@+id/btn_plan_creation"
       android:icon="@drawable/calendar"
-      android:title="@string/title_plan_creation" />
-
-  <item
-      android:id="@+id/btn_exit"
-      android:icon="@drawable/exit"
-      android:title="@string/title_exit" />
+      android:title="@string/title_plan_creation"/>
 </menu>

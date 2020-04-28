@@ -18,10 +18,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation = "vertical">
+                
                 <RatingBar
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:stepSize="1.0"
+                    android:layout_gravity = "center"
+                    android:stepSize="1.0"                    
                     android:numStars = "5"
                     android:id="@+id/RatingBarStatistics" />
                 <View
@@ -45,7 +47,6 @@
                         android:layout_height="250dp"
                         android:indeterminate="false" 
                         android:max="100" 
-                        android:progress="50"
                         android:progressDrawable="@drawable/ProgressBarStyle"
                         android:secondaryProgress="100" />
                     <TextView

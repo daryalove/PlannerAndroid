@@ -5,6 +5,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id = "@+id/CardViewTask"
         card_view:cardElevation="4dp"
         card_view:cardUseCompatPadding="true"
         card_view:cardCornerRadius="5dp">
@@ -47,8 +48,11 @@
                 android:id="@+id/EditCardViewNote" />
             <RatingBar
                 android:stepSize="1.0"
+                style="?android:attr/ratingBarStyleIndicator"
                 android:id = "@+id/RatingCardViewImportance"
                 android:numStars="5"
+                android:clickable = "false"
+                android:longClickable = "false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <CheckBox

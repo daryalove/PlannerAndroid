@@ -36,6 +36,9 @@ namespace App1.Activity.ListOfTasks
             vh.EditTime.Text = mPhotoAlbum[position].EditTime;
             vh.RatingImportance.Rating = mPhotoAlbum[position].RatingImportance;
             vh.CheckBoxkReminder.Checked = mPhotoAlbum[position].CheckBoxReminder;
+            vh.RatingImportance.Focusable = false;
+            vh.RatingImportance.Enabled = false;
+            vh.RatingImportance.LongClickable = false;
         }
 
         public override int ItemCount

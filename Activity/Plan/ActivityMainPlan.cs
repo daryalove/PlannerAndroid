@@ -32,7 +32,6 @@ namespace App1.Activity.Plan
             var btn_current_plan = BtnNavigation.Menu.FindItem(Resource.Id.btn_current_plan);
             var btn_statistics = BtnNavigation.Menu.FindItem(Resource.Id.btn_statistics);
             var btn_plan_creation = BtnNavigation.Menu.FindItem(Resource.Id.btn_plan_creation);
-            var btn_exit = BtnNavigation.Menu.FindItem(Resource.Id.btn_exit);
 
 
             if (CrossSettings.Current.GetValueOrDefault("isEntrance", "") == "1")
@@ -55,27 +54,39 @@ namespace App1.Activity.Plan
                         break;
                     case Resource.Id.btn_plan_creation:
                         activityPlanCreation(fragmentTransaction);
-                        break;
-                    case Resource.Id.btn_exit:
-                        //Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
-                        //alert.SetTitle("Внимание!");
-                        //alert.SetMessage("Вы действитеьльно хотите выйти ?");
-                        //alert.SetPositiveButton("Да", (senderAlert, args) =>
-                        //{
-                        //    Intent Exit = new Intent(this, typeof(MainActivity));
-                        //    StartActivity(Exit);
-                        //});
-                        //alert.SetNegativeButton("Нет", (senderAlert, args) =>
-                        //{
-                        //});
-                        //Dialog dialog = alert.Create();
-                        //dialog.Show();
-                        Intent Exit = new Intent(this, typeof(ActivityListTasks));
-                        StartActivity(Exit);
-                        break;
+                        break;                    
                 }
             };
 
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu_main, menu);
+            return true;
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+            if (id == Resource.Id.btn_exit)
+            {
+                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                alert.SetTitle("Внимание!");
+                alert.SetMessage("Вы действитеьльно хотите выйти ?");
+                alert.SetPositiveButton("Да", (senderAlert, args) =>
+                {
+                    Intent Exit = new Intent(this, typeof(MainActivity));
+                    StartActivity(Exit);
+                });
+                alert.SetNegativeButton("Нет", (senderAlert, args) =>
+                {
+                });
+                Dialog dialog = alert.Create();
+                dialog.Show();
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         public void activityCurrentPlan(FragmentTransaction fragmentTransaction)
